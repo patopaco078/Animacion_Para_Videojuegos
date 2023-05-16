@@ -297,8 +297,8 @@ ModelImporter:
       name: WileCoyote|Walk
       takeName: WileCoyote|Walk
       internalID: -2657773006285944648
-      firstFrame: 0
-      lastFrame: 85
+      firstFrame: 6
+      lastFrame: 84
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
