@@ -62,10 +62,11 @@ public class IKsurface : MonoBehaviour
         if(NearSurface(out foundPoint))
         {
             transform.position = foundPoint;
+            OnDetected?.Invoke(true);
         }
         else
         {
-
+            OnDetected?.Invoke(false);
         }
     }
 
