@@ -7,6 +7,7 @@ public class IKSnap : MonoBehaviour
 {
     [SerializeField] private MultiParentConstraint[] animatedBones;
     [SerializeField] private MultiParentConstraint[] proceduralBones;
+    [SerializeField] private float interpoleichon = 1.0f;
 
     private float weight;
 
@@ -24,7 +25,8 @@ public class IKSnap : MonoBehaviour
 
     public void SetWeight(bool state)
     {
-        weight = state ? 1 : 0;
+        weight += Time.deltaTime*interpoleichon* (state ? 1 : -1);
+        weight = Mathf.Clamp01(weight);
         UpdateWeights();
     }
 }
