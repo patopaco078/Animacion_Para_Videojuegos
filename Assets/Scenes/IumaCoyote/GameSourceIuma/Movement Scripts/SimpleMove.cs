@@ -25,15 +25,7 @@ public class SimpleMove : MonoBehaviour
 
     public void Move(CallbackContext context)
     {
-        /* Vector2 inputValue = context.ReadValue<Vector2>();
-         Vector3 newForward = Vector3.ProjectOnPlane(camera.transform.forward, transform.up);
-         Vector3 newRight = camera.transform.right;
-         transform.Translate(newForward * inputValue.y + newRight * inputValue.x);*/
-
-
-        /* Vector2 motionValue = context.ReadValue<Vector2>();
-         Debug.Log("move");
-         transform.Translate(motionValue);*/
+      
         inputValue = context.ReadValue<Vector2>();
         Debug.Log("mod");
       
