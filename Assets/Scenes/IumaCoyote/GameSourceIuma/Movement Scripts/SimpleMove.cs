@@ -37,12 +37,13 @@ public class SimpleMove : MonoBehaviour
         Vector3 forwardVector = Vector3.ProjectOnPlane(cameraTransform.forward, transform.up);
         Vector3 rightVector = cameraTransform.right;
         Vector3 motionVector = forwardVector * smoothInput.y + rightVector * smoothInput.x;
+        Vector2 twoMotionVector = motionVector;
         transform.Translate(motionVector * (Time.deltaTime * speed), Space.World);
 
         onMoved?.Invoke(smoothInput.magnitude / 1.414f);
-        if(motionVector.magnitude>0.01)
+        if(twoMotionVector.magnitude >0.01)
         {
-            transform.forward = motionVector.normalized;
+            transform.forward = twoMotionVector.normalized;
         }
 
     }
