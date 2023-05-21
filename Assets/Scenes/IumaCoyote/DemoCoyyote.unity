@@ -6850,7 +6850,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  jumpForce: 150
+  jumpForce: 120
 --- !u!114 &1783542343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6908,6 +6908,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 0f4caa00-23fa-4b31-bb76-945dc739dbbe
     m_ActionName: Coyote/Jump[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1783542352}
+        m_TargetAssemblyTypeName: AttackControl, Assembly-CSharp
+        m_MethodName: Attack
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: ac796b7d-6984-43c7-aeae-0e2f3a877ba1
+    m_ActionName: Coyote/Attack[/Keyboard/e]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Coyote
@@ -7072,6 +7088,33 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3b852b8c3cda3694899059009278b10e, type: 3}
   m_PrefabInstance: {fileID: 1783542335}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1783542352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1783542336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5476ffa96c5120a4981286dee81deb67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onAttack:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1783542347}
+        m_TargetAssemblyTypeName: AnimationControlle, Assembly-CSharp
+        m_MethodName: SetAttackTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1784908446 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7859036154253979699, guid: 3b852b8c3cda3694899059009278b10e, type: 3}

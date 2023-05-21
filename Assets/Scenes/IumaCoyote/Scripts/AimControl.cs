@@ -5,7 +5,7 @@ using UnityEngine.Animations.Rigging;
 
 public class AimControl : MonoBehaviour
 {
-   /* [SerializeField] private Vector3 relativeDetectPos;
+   /*[SerializeField] private Vector3 relativeDetectPos;
     [SerializeField] private float detectRadius;
     [SerializeField] private LayerMask detectionMask;
 

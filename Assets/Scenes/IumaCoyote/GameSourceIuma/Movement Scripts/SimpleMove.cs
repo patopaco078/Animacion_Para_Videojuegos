@@ -52,7 +52,7 @@ public class SimpleMove : MonoBehaviour
         {
             smoothInput = Vector2.zero;
         }
-        onMoved?.Invoke(smoothInput.magnitude / 1.414f);
+        onMoved?.Invoke(smoothInput.magnitude);// /1.414f
 
         if (twoMotionVector.magnitude >0.01)
         {

@@ -50,14 +50,21 @@ public class AnimationControlle : MonoBehaviour
         {
             StopAllCoroutines();
             isIdle = false;
+            animator.SetBool("break", false);
         }
+        
+          
     }
- 
+
     IEnumerator SetBreak()
     {
         yield return new WaitForSeconds(5f);
         animator.SetTrigger("break");
         isIdle = false;
+    }
+    public void SetAttackTrigger()
+    {
+        animator.SetTrigger("attack");
     }
    
 }
