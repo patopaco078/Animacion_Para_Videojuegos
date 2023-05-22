@@ -4,35 +4,39 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations.Rigging;
 
-public class ConstraintController : MonoBehaviour
+namespace Iumita
 {
-
-    [SerializeField] [Range(0, 1)] private float proceduralInfluence;
-    [SerializeField] private MultiParentConstraint[] animatedBones;
-    [SerializeField] private MultiParentConstraint[] proceduralBones;
-
-    private void UpdateInfluence(float weight)
+    public class ConstraintController : MonoBehaviour
     {
-        if (animatedBones == null) return;
 
-        foreach (MultiParentConstraint multiParentConstraint in animatedBones)
+        [SerializeField] [Range(0, 1)] private float proceduralInfluence;
+        [SerializeField] private MultiParentConstraint[] animatedBones;
+        [SerializeField] private MultiParentConstraint[] proceduralBones;
+
+        private void UpdateInfluence(float weight)
         {
-            if (multiParentConstraint == null) continue;
-            multiParentConstraint.weight = weight;
+            if (animatedBones == null) return;
+
+            foreach (MultiParentConstraint multiParentConstraint in animatedBones)
+            {
+                if (multiParentConstraint == null) continue;
+                multiParentConstraint.weight = weight;
+            }
+
+            if (proceduralBones == null) return;
+
+            foreach (MultiParentConstraint proceduralConstraint in proceduralBones)
+            {
+                if (proceduralConstraint == null) continue;
+                proceduralConstraint.weight = 1 - weight;
+            }
         }
 
-        if (proceduralBones == null) return;
-
-        foreach (MultiParentConstraint proceduralConstraint in proceduralBones)
+        private void OnValidate()
         {
-            if (proceduralConstraint == null) continue;
-            proceduralConstraint.weight = 1 - weight;
+            UpdateInfluence(proceduralInfluence);
         }
-    }
 
-    private void OnValidate()
-    {
-        UpdateInfluence(proceduralInfluence);
     }
-
 }
+
