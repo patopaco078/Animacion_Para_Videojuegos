@@ -23,7 +23,8 @@ public class MovimientoD : MonoBehaviour
     public int lives = 2;
     private bool canTakeDamage = true;
     public float damageCooldown = 3f;
-
+    [SerializeField] int currentHealth;
+    [SerializeField] int maxHealth=30;
 
     public Rigidbody rb;
     public Animator animator;
@@ -39,6 +40,10 @@ public class MovimientoD : MonoBehaviour
     public float idleTimeThreshold = 3f;
     private float idleTimer = 0f;
 
+    private void Start()
+    {
+        currentHealth = maxHealth;
+    }
     private void Update()
     {
         Move();
@@ -207,12 +212,16 @@ public class MovimientoD : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
-            if (canTakeDamage)
-            {
-                TakeDamage();
-                canTakeDamage = false;
-                Invoke("ResetDamageCooldown", damageCooldown);
-            }
+            /* if (canTakeDamage)
+             {
+                 TakeDamage();
+                 canTakeDamage = false;
+                 Invoke("ResetDamageCooldown", damageCooldown);
+             }*/
+
+            int damage = 5; // Adjust the damage value as needed
+            TakeDamage(damage);
+
         }
         else if (collision.gameObject.CompareTag("LifePickup"))
         {
@@ -232,14 +241,31 @@ public class MovimientoD : MonoBehaviour
             animator.SetBool("IsJumping", true);
         }
     }
-    private void TakeDamage()
+    private void TakeDamage(int damage)
     {
+
+        currentHealth -= damage;
+
+        if (currentHealth <= 0)
+        {
+            //currentHealth = 0;
+            animator.SetTrigger("Die");
+            Debug.Log("c murio");
+            // Trigger death animation or any other actions for death
+        }
+        else
+        {
+            // Trigger damage animation or any other actions for taking damage
+            animator.SetTrigger("TakeDamage"); // Assuming you have a trigger parameter called "Damage" in your animator
+        }
+       
+      /*
         lives--;
         animator.SetTrigger("TakeDamage");
         if (lives <= 0)
         {
             Die();
-        }
+        }*/
     }
 
     private void ResetDamageCooldown()
@@ -296,7 +322,7 @@ public class MovimientoD : MonoBehaviour
     }
     private void PickupLife()
     {
-        lives++;
+        currentHealth+=15;
       /*  if (lives < 2)
         {
             lives = 2;
