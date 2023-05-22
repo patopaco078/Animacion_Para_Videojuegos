@@ -1,8 +1,15 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using UnityEngine.Animations.Rigging;
 
 public class MovimientoD : MonoBehaviour
 {
+    public Text healthText;
+
+    public MultiAimConstraint aim;
+
     private bool isInAir = false;
     private bool isAttacking = false;
     private bool isRunning;
@@ -11,6 +18,8 @@ public class MovimientoD : MonoBehaviour
     private bool isActionInProgress;
     private bool canMove = true;
     public bool isSlowWalking = false;
+
+    public PlayerInput jose;
 
 
     public GameObject lifePickupPrefab;
@@ -50,6 +59,7 @@ public class MovimientoD : MonoBehaviour
         Jump();
         Attack();
         CheckIdle();
+        
     }
 
     private void FixedUpdate()
@@ -227,8 +237,15 @@ public class MovimientoD : MonoBehaviour
         {
             if (canPickupLife /*&& lives < 2*/)
             {
+                
                 PickupLife();
-                Destroy(collision.gameObject);
+                healthText.text = "Health: " + currentHealth.ToString();
+
+                aim.enabled = false;
+
+                collision.gameObject.SetActive(false);
+
+                //Destroy(collision.gameObject);
             }
         }
     }
@@ -251,21 +268,29 @@ public class MovimientoD : MonoBehaviour
             //currentHealth = 0;
             animator.SetTrigger("Die");
             Debug.Log("c murio");
+
+            jose.enabled = false;
+
+            Invoke("desactivar", 3);
             // Trigger death animation or any other actions for death
+
+
         }
         else
         {
             // Trigger damage animation or any other actions for taking damage
             animator.SetTrigger("TakeDamage"); // Assuming you have a trigger parameter called "Damage" in your animator
         }
-       
-      /*
-        lives--;
-        animator.SetTrigger("TakeDamage");
-        if (lives <= 0)
-        {
-            Die();
-        }*/
+
+        healthText.text = "Health: " + currentHealth.ToString();
+
+        /*
+          lives--;
+          animator.SetTrigger("TakeDamage");
+          if (lives <= 0)
+          {
+              Die();
+          }*/
     }
 
     private void ResetDamageCooldown()
@@ -278,6 +303,8 @@ public class MovimientoD : MonoBehaviour
         // Perform death logic
         animator.SetTrigger("Die");
         canMove = false;
+
+        Invoke("desactivar", 3);
         // ... Additional code for death behavior ...
     }
     public void OnAttackAnimationEnd()
@@ -322,11 +349,15 @@ public class MovimientoD : MonoBehaviour
     }
     private void PickupLife()
     {
-        currentHealth+=15;
+        currentHealth+=10;
       /*  if (lives < 2)
         {
             lives = 2;
         }*/
         // Reproducir animación de recoger vida si es necesario
+    }
+    void desactivar()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

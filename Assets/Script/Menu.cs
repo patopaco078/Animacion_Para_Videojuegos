@@ -21,7 +21,7 @@ public class Menu : MonoBehaviour
         // Verificar si se presiona la tecla 1
         if (character == '1')
         {
-            SceneManager.LoadScene("OtraEscena"); // Reemplaza "Escena1" con el nombre de tu primera escena
+            SceneManager.LoadScene("DemoCoyyote"); // Reemplaza "Escena1" con el nombre de tu primera escena
         }
 
         // Verificar si se presiona la tecla 2
