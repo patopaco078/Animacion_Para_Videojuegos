@@ -33,8 +33,10 @@ public class SimpleMove : MonoBehaviour
     {
       
         inputValue = context.ReadValue<Vector2>();
-        Debug.Log("move");
+        //Debug.Log("move");
+       
     }
+    
     public void Jump(CallbackContext context)
     {
         rb.AddForce(Vector3.up * jumpForce);
@@ -51,13 +53,16 @@ public class SimpleMove : MonoBehaviour
         if(inputValue==Vector2.zero)
         {
             smoothInput = Vector2.zero;
+           
         }
         onMoved?.Invoke(smoothInput.magnitude);// /1.414f
 
         if (twoMotionVector.magnitude >0.01)
         {
             transform.forward = twoMotionVector.normalized;
+            
         }
+       
 
     }
 }
