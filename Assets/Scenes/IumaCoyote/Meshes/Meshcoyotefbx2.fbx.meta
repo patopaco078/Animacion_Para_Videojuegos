@@ -2,7 +2,25 @@ fileFormatVersion: 2
 guid: 3b852b8c3cda3694899059009278b10e
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -1654191466584495214
+    second: WileCoyote|Key.001|Take 001|BaseLayer
+  - first:
+      74: -5173901596074212582
+    second: WileCoyote|Key.003|Take 001|BaseLayer
+  - first:
+      74: -4310115396761447510
+    second: WileCoyote|Key.004|Take 001|BaseLayer
+  - first:
+      74: -1164400313088840646
+    second: WileCoyote|Key.005|Take 001|BaseLayer
+  - first:
+      74: -2681882741244830575
+    second: WileCoyote|Key|Take 001|BaseLayer
+  - first:
+      74: -6146674289196378578
+    second: WileCoyote|WileCoyoteAction
   externalObjects: {}
   materials:
     materialImportMode: 2

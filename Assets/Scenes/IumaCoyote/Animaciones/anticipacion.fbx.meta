@@ -2,7 +2,58 @@ fileFormatVersion: 2
 guid: a336b32aa0412dd4fa7ca6c17e39c51e
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 8166435862424274655
+    second: WileCoyote|Action
+  - first:
+      74: -5571874566464786058
+    second: WileCoyote|Anticiapcao
+  - first:
+      74: -1359938885892620936
+    second: WileCoyote|anticip
+  - first:
+      74: -7322168453798610600
+    second: WileCoyote|anticipa
+  - first:
+      74: 3766233699204977876
+    second: WileCoyote|Anticipacion
+  - first:
+      74: -5934536356499532921
+    second: WileCoyote|caida
+  - first:
+      74: -8593273170032564904
+    second: WileCoyote|ground
+  - first:
+      74: -4114591320572255388
+    second: WileCoyote|Idle break
+  - first:
+      74: 4282278507981529614
+    second: WileCoyote|Idle2.0
+  - first:
+      74: -2444304485907593544
+    second: WileCoyote|Jump
+  - first:
+      74: -1654191466584495214
+    second: WileCoyote|Key.001|Take 001|BaseLayer
+  - first:
+      74: -5173901596074212582
+    second: WileCoyote|Key.003|Take 001|BaseLayer
+  - first:
+      74: -4310115396761447510
+    second: WileCoyote|Key.004|Take 001|BaseLayer
+  - first:
+      74: -1164400313088840646
+    second: WileCoyote|Key.005|Take 001|BaseLayer
+  - first:
+      74: -2681882741244830575
+    second: WileCoyote|Key|Take 001|BaseLayer
+  - first:
+      74: 5222441654352528644
+    second: WileCoyote|qk
+  - first:
+      74: -6117199917129073981
+    second: WileCoyote|Salto
   externalObjects: {}
   materials:
     materialImportMode: 2

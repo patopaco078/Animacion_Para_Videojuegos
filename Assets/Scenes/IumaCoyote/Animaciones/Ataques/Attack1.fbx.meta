@@ -2,7 +2,55 @@ fileFormatVersion: 2
 guid: 77783bd134ec06b408b8124a31972ec0
 ModelImporter:
   serializedVersion: 21300
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: 1849632895182216917
+    second: WileCoyote|Attack1
+  - first:
+      74: -6011782875570572968
+    second: WileCoyote|Attack2
+  - first:
+      74: 6218707590561168721
+    second: WileCoyote|Attack3
+  - first:
+      74: -2950425044701558630
+    second: WileCoyote|CameraAction
+  - first:
+      74: -936173009951282999
+    second: WileCoyote|ComboPunch
+  - first:
+      74: -4719315444779858067
+    second: WileCoyote|Death
+  - first:
+      74: 380873656336413589
+    second: WileCoyote|Idle
+  - first:
+      74: -4114591320572255388
+    second: WileCoyote|Idle break
+  - first:
+      74: 4282278507981529614
+    second: WileCoyote|Idle2.0
+  - first:
+      74: -2444304485907593544
+    second: WileCoyote|Jump
+  - first:
+      74: -1654191466584495214
+    second: WileCoyote|Key.001|Take 001|BaseLayer
+  - first:
+      74: -5173901596074212582
+    second: WileCoyote|Key.003|Take 001|BaseLayer
+  - first:
+      74: -4310115396761447510
+    second: WileCoyote|Key.004|Take 001|BaseLayer
+  - first:
+      74: -1164400313088840646
+    second: WileCoyote|Key.005|Take 001|BaseLayer
+  - first:
+      74: -2681882741244830575
+    second: WileCoyote|Key|Take 001|BaseLayer
+  - first:
+      74: 1595013726203177982
+    second: WileCoyote|Point.002Action
   externalObjects: {}
   materials:
     materialImportMode: 2
