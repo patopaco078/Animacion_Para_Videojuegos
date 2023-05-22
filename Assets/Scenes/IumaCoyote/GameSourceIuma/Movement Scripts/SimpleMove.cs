@@ -4,6 +4,7 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 using CallbackContext = UnityEngine.InputSystem.InputAction.CallbackContext;
 
 [Serializable]
@@ -24,22 +25,27 @@ public class SimpleMove : MonoBehaviour
     [SerializeField] private UnityFloatEvent onMoved;
     Rigidbody rb;
     [SerializeField] float jumpForce;
+    [SerializeField] private float shiftMotionValue = 0.2f;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
-    public void Move(CallbackContext context)
+    public void Move(InputAction.CallbackContext context)
     {
       
-        inputValue = context.ReadValue<Vector2>();
+
         //Debug.Log("move");
-       
+        inputValue = context.ReadValue<Vector2>();
+
     }
-    
-    public void Jump(CallbackContext context)
+
+    public void Jump(InputAction.CallbackContext context)
     {
-        rb.AddForce(Vector3.up * jumpForce);
+       
+            rb.AddForce(Vector3.up * jumpForce);
+        
+      
         
     }
     private void Update()
@@ -62,7 +68,7 @@ public class SimpleMove : MonoBehaviour
             transform.forward = twoMotionVector.normalized;
             
         }
-       
+     
 
     }
 }
